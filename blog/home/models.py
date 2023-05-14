@@ -28,3 +28,12 @@ class Blog(models.Model):
     approved = models.BooleanField(null=True, default=False)
     def __str__(self):
         return self.title
+    
+class Comment(models.Model):
+    comment_on = models.ForeignKey(Blog, on_delete=models.CASCADE, related_name='comments', null=True)
+    name = models.CharField(max_length=100, null=True)
+    body = models.TextField(null=True)
+    date = models.DateField(auto_now=True, null=True)
+
+    def __str__(self):
+        return self.name
