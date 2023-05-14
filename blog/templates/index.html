@@ -25,6 +25,10 @@
             </div>
        
             {% endfor %}
+            
+            <b class="mt-2" style="text-align: right; margin-right: 25px !important;">
+                <a href="{% url 'health' %}" style="color: blue; text-decoration: none">View all ➡️</a>
+            </b>
         </div>
 
         <h2>Travel ✈️ BLOGS </h2> 
@@ -46,6 +50,10 @@
                     </div>
             </div>
             {% endfor %}
+
+            <b class="mt-2" style="text-align: right; margin-right: 25px !important;">
+                <a href="{% url 'travel' %}" style="color: blue; text-decoration: none">View all ➡️</a>
+            </b>
         </div>
 
         <h2>Movie 🎥 BLOGS </h2> 
@@ -67,6 +75,10 @@
                     </div>
             </div>
             {% endfor %}
+
+            <b class="mt-2" style="text-align: right; margin-right: 25px !important;">
+                <a href="{% url 'movies' %}" style="color: blue; text-decoration: none">View all ➡️</a>
+            </b>
         </div>
 
 
@@ -89,6 +101,10 @@
                     </div>
             </div>
             {% endfor %}
+
+            <b class="mt-2" style="text-align: right; margin-right: 25px !important;">
+                <a href="{% url 'news' %}" style="color: blue; text-decoration: none">View all ➡️</a>
+            </b>
         </div>
     </div>
 {% endblock content %}
