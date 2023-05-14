@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
-{% block title %} EDit/Update Profile {% endblock title %}
+{% block title %} Edit/Update Profile {% endblock title %}
 {% block content %}
 <div class="container mt-5 mb-5">
 <form method="POST" class="shadow p-3 w-50" autocomplete="off" enctype="multipart/form-data">
     <h3>Update Profile </h3>
     {% csrf_token %}
     {{editForm.as_p}}
-    <button type="submit" class="btn btn-success mt-2">Update</button>
-    
+    <button type="submit" class="btn btn-success">Update</button>
+    <a href="{% url 'profile' %}" class="btn btn-secondary">Cancel</a>
 </form>
 </div>
 
