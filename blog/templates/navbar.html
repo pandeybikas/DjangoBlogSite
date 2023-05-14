@@ -13,16 +13,16 @@
 			  <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
 			</li>
 			<li class="nav-item">
-			  <a class="nav-link" href="#">Health</a>
+			  <a class="nav-link" href="{% url 'health' %}">Health</a>
 			</li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Travel</a>
+                <a class="nav-link" href="{% url 'travel' %}">Travel</a>
               </li>				
               <li class="nav-item">
-                <a class="nav-link" href="#">News</a>
+                <a class="nav-link" href="{% url 'news' %}">News</a>
               </li>	
               <li class="nav-item">
-                <a class="nav-link" href="#">Movies</a>
+                <a class="nav-link" href="{% url 'movies' %}">Movies</a>
               </li>	
               {% if user.is_authenticated %}
               <li class="nav-item dropdown">

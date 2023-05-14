@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}  News | DjangoBlog {% endblock title %}   
+
+{% block content %}
+<div class="container mt-5 mb-5">
+    <div class="row" style="margin-bottom: 30px;">
+        {% for news in news_blog %}
+       
+        <div class="col-md-4 shadow p-3 mx-1"  style="width: 32%;">
+            <img class="shadow" src="{{news.image.url}}" style="width: 100%; height: 300px;">
+            <a href="{% url 'blog-detail' news.slug %}" style="text-decoration:none; color:green;"><h4 class="mt-3">{{news.title}}</h4></a>
+            
+        
+            <p>{{news.desc |truncatechars:150}}
+                <hr>
+                <div class="row">
+                    <div class="col-md-6">
+                        📆 {{news.publish_date}}
+                    </div>
+                    <div class="col-md-6">
+                        ✏️ {{news.author}}
+                    </div>
+                </div>
+        </div>
+   
+        {% endfor %}
+    </div>
+
+</div>
+
+
+
+{% endblock content %}
