@@ -14,3 +14,10 @@ def index(request):
         'news_blog' : news_blog
     }
     return render(request, 'index.html', context)
+
+def blogDetail(request, slug):
+    detail_obj = Blog.objects.get(slug = slug)
+    context= {
+        'detail_obj' : detail_obj
+    }
+    return render(request, 'blog-detail.html', context)
