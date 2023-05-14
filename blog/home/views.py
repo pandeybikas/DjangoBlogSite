@@ -1,5 +1,16 @@
 from django.shortcuts import render
-
+from .models import Blog
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    health_blog = Blog.objects.filter(category_id= 1)
+    travel_blog= Blog.objects.filter(category_id = 2)
+    news_blog = Blog.objects.filter(category_id = 3)
+    movie_blog = Blog.objects.filter(category_id = 4)
+    
+    context = {
+        'health_blog' : health_blog,
+        'travel_blog' : travel_blog,
+        'movie_blog'  : movie_blog,
+        'news_blog' : news_blog
+    }
+    return render(request, 'index.html', context)
