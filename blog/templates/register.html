@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %} Create account  {% endblock title %}
+{% block content %}
+<div class="container mt-5 mb-5">
+<form method="POST" class="shadow p-3 w-50" autocomplete="off">
+    <h3> Register Here </h3>
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="btn btn-success mt-2">Register</button>
+    <p class="mt-2"> If you already have an account <a href="{% url 'login' %}" style="list-style-type:none;">Login </a></p>
+</form>
+</div>
+
+{% endblock content %}
+
+
