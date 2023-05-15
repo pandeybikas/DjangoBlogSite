@@ -4,6 +4,7 @@ from .models import Blog, Comment
 from .forms import CommentModelForm, BlogModelForm
 # Create your views here.
 def index(request):
+    all_blog = Blog.objects.all()
     health_blog = Blog.objects.filter(category_id= 1)[0:3]
     travel_blog= Blog.objects.filter(category_id = 2)[0:3]
     news_blog = Blog.objects.filter(category_id = 3)[0:3]
