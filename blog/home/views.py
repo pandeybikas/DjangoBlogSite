@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from .models import Blog, Comment
-from .forms import CommentModelForm
+from .forms import CommentModelForm, BlogModelForm
 # Create your views here.
 def index(request):
     health_blog = Blog.objects.filter(category_id= 1)[0:3]
@@ -23,6 +23,22 @@ def blogDetail(request, slug):
         'detail_obj' : detail_obj
     }
     return render(request, 'blog-detail.html', context)
+
+def addBlog(request):
+    newBlog = BlogModelForm()
+    if request.method == 'POST':
+        newBlog = BlogModelForm(request.POST, request.FILES)
+        if newBlog.is_valid():
+            
+            newBlog.save()
+            return redirect('home')
+    else:
+        newBlog= BlogModelForm()
+    context = {
+        'newBlog' : newBlog
+    }
+
+    return render(request, 'add-blog.html', context)
 
 def addComment(request, slug):
     comment_obj= Blog.objects.get(slug=slug)

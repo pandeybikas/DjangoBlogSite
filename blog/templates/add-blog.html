@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}  Add New Blog   {% endblock title %}  
+{% block content %}
+<div class"mx-5 mt-5 mb-5">
+<form method="POST" class="mx-5 mt-5 mb-5 shadow w-50 p-3" enctype="multipart/form-data">
+{% csrf_token %}
+<div class="row">
+    <div class="col-md-7">
+        {{newBlog.title|as_crispy_field}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        {{newBlog.desc|as_crispy_field}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-7">
+        {{newBlog.category|as_crispy_field}}
+    </div>
+    <div class="col-md-5">
+        {{newBlog.image|as_crispy_field}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-7">
+        {{newBlog.author|as_crispy_field}}
+    </div>
+    <div class="col-md-5">
+        {{newBlog.author_pic|as_crispy_field}}
+    </div>
+</div>
+{{newBlog.author_bio|as_crispy_field}}
+
+<button type="submit" class="btn btn-success">submit Blog</button>
+</form>
+
+</div>
+
+
+
+{% endblock content %}
+
+
+
+
